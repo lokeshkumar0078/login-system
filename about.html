@@ -1,0 +1,38 @@
+<?php
+session_start();
+$con=mysqli_connect('localhost','root','');
+mysqli_select_db($con,'brainwarmup');
+if($_SESSION['ph']==true)
+{	
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>About</title>
+		<link rel="stylesheet" type="text/css" href="about.css">
+	</head>
+	<body>
+
+<table align="center" cellspacing="20px">
+<tr>
+	<td class="about">By: </td>
+	<td class="about">Lokesh Kumar</td>
+</tr>
+<tr>
+	<td class="about">Ph: </td>
+	<td class="about">9759999081</td>
+</tr>
+<tr>
+	<td class="about">E-mail:</td>
+	<td class="about">lokeshkumar0078.lk@gmail.com</td>
+</tr>
+</table>
+	</body>
+</html>
+<?php
+}
+else
+    header('location:login.php');
+
+mysqli_close($con);
+?>
